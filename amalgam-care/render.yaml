@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: amalgam-care-api
+    runtime: docker
+    plan: free
+    dockerfilePath: apps/api/Dockerfile
+    buildFilter:
+      paths:
+        - apps/api/**
+  - type: web
+    name: amalgam-care-web
+    runtime: docker
+    plan: free
+    dockerfilePath: apps/web/Dockerfile
+    buildFilter:
+      paths:
+        - apps/web/**
